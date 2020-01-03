@@ -1,0 +1,18 @@
+{
+  "extends": [
+    "wesbos",
+    "plugin:jest/recommended"
+  ],
+  "rules": {
+    "no-console": 2,
+    "prettier/prettier": [
+      "error",
+      {
+        "trailingComma": "es5",
+        "singleQuote": true,
+        "printWidth": 100,
+        "tabWidth": 2
+      }
+    ]
+  }
+}

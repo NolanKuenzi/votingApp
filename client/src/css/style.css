@@ -1,0 +1,19 @@
+body {
+    background: brown;
+}
+
+#header {
+    text-align: center;
+}
+
+/* <Polls /> component */
+
+#topSectionDiv {
+    text-align: right;
+    margin: 0em auto 0em auto;
+    width: 75%;
+}
+
+#homeBtn {
+    margin-left: 2em;
+}
