@@ -308,7 +308,7 @@ select {
     height: 15em;
 }
 
-/* <MyPolls /> */ 
+/* <MyPolls /> component */ 
 
 #myPollsBody {
     width: 50%;
@@ -379,4 +379,16 @@ select {
 #addPollEntryInput {
     display: inline-block;
     margin-bottom: 0.1em;
+}
+
+/* <Footer /> component */
+
+#footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    color: silver;
+    text-align: center;
+    margin-bottom: 0.5em;
 }

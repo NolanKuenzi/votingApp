@@ -6,6 +6,7 @@ import SignInPg from '../container/signInPg';
 import AddPoll from '../container/addPoll';
 import Poll from '../container/poll';
 import MyPolls from '../container/myPolls';
+import Footer from './footer';
 
 const Main = () => {
   const currentComp = useSelector(state => state.currentComp);
@@ -17,6 +18,9 @@ const Main = () => {
       {currentComp === 'addPoll' ? <AddPoll /> : null}
       {currentComp === 'poll' ? <Poll /> : null}
       {currentComp === 'myPolls' ? <MyPolls /> : null}
+      <div id="footer">
+        <Footer />
+      </div>
     </div>
   );
 };

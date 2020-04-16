@@ -7,6 +7,7 @@ const Register = () => {
   const [confirmPassword, setConfirmPassword] = useState('');
   const userEmail = useSelector(state => state.userEmail);
   const dispatch = useDispatch();
+
   const submitRegister = e => {
     e.preventDefault();
     if (userEmail !== null) {

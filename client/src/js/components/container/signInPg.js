@@ -3,7 +3,6 @@ import Login from './login';
 import Register from './register';
 import Reset from './reset';
 import ResetPass from './resetPass';
-import Footer from '../presentational/footer';
 
 const SignInPg = () => {
   const [loginArrow, setLoginArrow] = useState('▲');
@@ -66,8 +65,6 @@ const SignInPg = () => {
       <div id="forgotPassDiv" onClick={() => renderReset()}>
         Forgot Password?
       </div>
-      <br />
-      <Footer />
     </div>
   );
 };
