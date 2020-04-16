@@ -150,11 +150,11 @@ body {
 /* <SignInPg /> component */
 
 #signInDiv {
+    height: 25em;
+    width: 35em;
     margin: 3em auto 0em auto;
     padding: 1em;
     border: 0.2em solid black;
-    height: 25em;
-    width: 35em;
     background-color: silver;
     color: brown;
 }

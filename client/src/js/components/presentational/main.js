@@ -6,7 +6,6 @@ import SignInPg from '../container/signInPg';
 import AddPoll from '../container/addPoll';
 import Poll from '../container/poll';
 import MyPolls from '../container/myPolls';
-import Footer from './footer';
 
 const Main = () => {
   const currentComp = useSelector(state => state.currentComp);
