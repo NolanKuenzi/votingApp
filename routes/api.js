@@ -523,11 +523,9 @@ module.exports = function(app) {
         res.status(400).json({error: errors.array()[0].msg}); 
         return;
       } 
-      console.log(req.params);
       pool.query(`SELECT PollInfo FROM polls WHERE _id='${req.params.pollId}'`)
       .then(dta => {
         const pollDta = JSON.parse(dta[0][0].PollInfo);
-        console.log(pollDta);
         pollDta.push({name: req.params.entryName, count: 0});
         pool.query(`UPDATE polls SET PollInfo='${JSON.stringify(pollDta)}' WHERE _id='${req.params.pollId}'`)
         .then(dta => {
