@@ -169,7 +169,7 @@ module.exports = function(app) {
                 FROM: 'mr.nolank@gmail.com',
                 to: req.body.email,
                 subject: 'Voting App Password Reset',
-                text: `Password reset code is ${passResetCode}. Click the following link to reset your password: https://young-dawn-72099.herokuapp.com//polls?resetPass=${req.body.email}`,
+                text: `Password reset code is ${passResetCode}. Click the following link to reset your password: https://young-dawn-72099.herokuapp.com/polls?resetPass=${req.body.email}`,
               };
               transporter.sendMail(mailOptions, err => {
                 if (err) {
