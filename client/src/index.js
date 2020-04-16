@@ -1,11 +1,6 @@
-import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
-import Main from './js/components/presentational/main';
+import React from 'react';
+import { render } from 'react-dom';
+import App from './js/components/presentational/app.js';
 import './css/style.css';
 
-const App = () => (
-  <div>
-    <Main />
-  </div>
-);
-ReactDOM.render(<App />, document.getElementById('app'));
+render(<App />, document.getElementById('app'));

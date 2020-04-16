@@ -1,9 +1,88 @@
+/* Shared Styles */
+
 body {
     background: brown;
 }
 
-#header {
+.btnStyles {
+    margin-top: 0.1em;
+    font-size: 1em;
+    cursor: pointer;
+    color: brown;
+    border: 0.09em solid black;
+    background-color: silver;
+    outline: none;
+}
+
+.btnStyles:active {
+    background-color: brown;
+    outline: none;
+    transform: translateY(0.16em);
+    color: silver;
+}
+
+.txtInputs {
+    border: 0.09em solid black;
+    margin-top: 0.2em;
+    font-size: 1em;
+    background-color: silver;
+    outline: none;
+    color: brown;
+}
+
+/* <TopMenu /> component */
+
+#topMenuTitle {
     text-align: center;
+    margin: 0em 0em -2.2em 0.3em;
+    font-size: 1.2em;
+    text-decoration: underline;
+}
+
+#topMenuBtnsDiv {
+    margin-top: 1em;
+    text-align: right;
+    width: 80%;
+}
+
+.topMenuBtns {
+    cursor: pointer;
+    font-size: 1.2em;
+    margin: 0em 0.3em 0em 0.3em;
+    color: brown;
+    border: 0.09em solid black;
+    background-color: silver;
+    outline: none;
+}
+
+.topMenuBtns:active {
+    background-color: brown;
+    outline: none;
+    transform: translateY(0.16em);
+    color: silver;
+}
+
+#topMenuSpan {
+    font-size: 1.5em;
+}
+
+#signedInDiv {
+    color: black;
+    margin-top: 1em;
+    width: 25em;
+    margin-left: auto;
+    font-size: 0.85em;
+}
+
+#viewPollsSpan {
+    display: inline-block;
+    margin-top: 0.5em;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+#signedInEmailSpan {
+    text-decoration: underline;
 }
 
 /* <Polls /> component */
@@ -14,6 +93,290 @@ body {
     width: 75%;
 }
 
-#homeBtn {
-    margin-left: 2em;
+#pollsBGroundDiv {
+    text-align: center;
+    background-color: silver;
+    padding: 1em 2em 5em 2em;
+    border: 0.1em solid black;
+    width: 50em;
+    margin: 3em auto 0em auto;
+}
+
+#pollsBody {
+    background-color: brown;
+    border: 0em solid black;
+    margin-top: 1em;
+    padding: 0.5em 0em 0.5em 0em;
+    border: 0.1em solid black;
+}
+
+#newPollBtnDiv {
+    width: 98%;
+    text-align: right;
+}
+
+#newPollBtn {
+    font-size: 0.9em;
+    cursor: pointer;
+    color: brown;
+    border: 0.09em solid black;
+    background-color: silver;
+    outline: none;
+}
+
+#newPollBtn:active {
+    background-color: brown;
+    outline: none;
+    transform: translateY(0.16em);
+    color: silver;
+}
+
+#pollsUl {
+    list-style-type: none;
+}
+
+.pollsLi {
+    cursor: pointer;
+    margin: 0em auto 0em auto;
+    width: 25em;
+    font-size: 1.2em;
+    margin-top: 0.2em;
+}
+
+.pollsLi:hover {
+    background-color: silver;
+}
+
+/* <SignInPg /> component */
+
+#signInDiv {
+    margin: 3em auto 0em auto;
+    padding: 1em;
+    border: 0.2em solid black;
+    height: 25em;
+    width: 35em;
+    background-color: silver;
+    color: brown;
+}
+
+#signInDivInTop {
+    text-align: center;
+}
+
+.sidTop_Div {
+    display: inline-block;
+    margin: 1em 0.5em 0em 0.5em;
+    padding: 0.2em;
+    width: 10em;
+    border: 0.1em solid black;
+    background: silver;
+    font-size: 1.1em;
+    cursor: pointer;
+}
+
+.arrownSpans {
+    font-size: 0.7em;
+}
+
+#signInDivInBottom {
+    margin-top: 2em;
+    height: 72%;
+}
+
+#forgotPassDiv {
+    text-align: center;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+/* <Login /> component */
+
+#loginDiv {
+    padding: 1em;
+    height: 12em;
+    text-align: center;
+    border: 0.1em solid black;
+}
+
+#loginSpan {
+    text-align: center;
+}
+
+/* <Register /> component */
+
+#registerDiv {
+    text-align: center;
+    height: 14em;
+    padding: 1em;
+    border: 0.1em solid black;
+}
+/* <Reset /> component */
+
+#resetDiv {
+    text-align: center;
+    height: 10em;
+    padding: 1em;
+    border: 0.1em solid black;
+}
+
+/* <ResetPass /> component */
+
+#resetPassDiv {
+    padding: 1em;
+    height: 12em;
+    text-align: center;
+    border: 0.1em solid black;
+}
+
+/* <AddPoll />  component  */
+
+#addPollDiv {
+    margin: 6em auto 0em auto;
+    text-align: center;
+    border: 0.2em solid black;
+    width: 30em;
+    height: 20em;
+    padding: 0.5em;
+    background-color: silver;
+    color: brown;
+}
+
+#addPollSpan {
+    font-size: 1.2em;
+    text-decoration: underline;
+}
+
+#addPollForm {
+    margin-top: 3.5em;
+}
+
+#addPollTxtInput {
+    font-size: 1.1em;
+}
+
+#addPollTextarea {
+    height: 5em;
+    width: 18em;
+    font-size: 1.1em;
+}
+
+#addPollSubBtn {
+    margin-right: 0.2em
+
+}
+
+#addPollCancelBtn {
+    margin-left: 0.2em;
+}
+
+/* <Poll /> component */
+
+#pollDiv {
+    padding: 1em;
+    background-color: silver;
+    margin: 3em auto 0em auto;
+    border: 0.1em solid black;
+    width: 75%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+
+#pollTitleSpan {
+    font-size: 1.5em;
+    display: inline-block;
+    margin-bottom: 1em;
+}
+
+#voteForSpan {
+    font-size: 1.2em;
+}
+
+select {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+}
+
+#pollVoteBtn {
+    font-size: 1em;
+    width: 10em;
+}
+
+#chartDiv {
+    width: 25em;
+    height: 15em;
+}
+
+/* <MyPolls /> */ 
+
+#myPollsBody {
+    width: 50%;
+    margin: 5em auto 0em auto;
+}
+
+#myPollsDiv {
+    text-align: center;
+    background-color: silver;
+    list-style-type: none;
+    border: 0.1em solid black;
+    padding: 0.5em;
+}
+
+#myPollsTable {
+    text-align: left;
+    margin: 0em auto 0em auto;
+}
+
+.myPollName {
+    font-size: 1.5em;
+}
+
+.editBtn {
+    font-size: 0.7em;
+}
+
+.deleteBtn {
+    font-size: 0.7em;
+}
+
+#editPollDiv {
+    margin-top: 1em;
+}
+
+#editPollStyleDiv {
+    text-align: center;
+    background-color: silver;
+    border: 0.1em solid black;
+    padding: 0.5em;
+}
+
+.cancelBtnDiv {
+    font-size: 0.7em;
+    text-align: right;
+    margin-bottom: -1em;
+
+}
+
+#editPollTable {
+    margin: 0em auto 0em auto;
+    padding: 0.5em;
+    border: 0.01em solid black;
+}
+
+.editPollEntryList {
+    font-size: 1em;
+}
+
+.delPollEntryBtn {
+    font-size: 0.8em;
+}
+
+#addPollSection {
+    margin-top: 0.2em;
+}
+
+#addPollEntryInput {
+    display: inline-block;
+    margin-bottom: 0.1em;
 }

@@ -2,7 +2,7 @@
   "name": "voting_app",
   "version": "1.0.0",
   "engines": {
-    "node": "10.5.0"
+    "node": "12.15.0"
   },
   "main": "index.js",
   "scripts": {
@@ -14,13 +14,20 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "bcrypt": "^3.0.7",
+    "body-parser": "^1.19.0",
     "chai": "^4.2.0",
     "chai-http": "^4.3.0",
+    "cookie-parser": "^1.4.4",
+    "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "express-validator": "^6.3.1",
     "helmet": "^3.21.2",
-    "mocha": "^6.2.2"
+    "jsonwebtoken": "^8.5.1",
+    "mocha": "^6.2.2",
+    "mysql2": "^2.1.0",
+    "nodemailer": "^6.4.2"
   },
   "devDependencies": {
     "nodemon": "^2.0.2"
