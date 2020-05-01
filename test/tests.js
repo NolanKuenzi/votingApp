@@ -119,7 +119,7 @@ describe('tests', function() {
         assert.equal(res.body.error, 'Email not found');
       })    
     }) 
-    /*it('Reset email is sent to user', function() {
+    it('Reset email is sent to user', function() {
       return chai.request(server)
       .put('/api/reset')
       .send({
@@ -129,7 +129,7 @@ describe('tests', function() {
         assert.equal(res.status, 200);
         assert.equal(res.body.msg, 'success');
       })    
-    })*/
+    })
     // reset tests - /polls? (with reset query)
     it('Invalid reset query', function() {
       return chai.request(server)
@@ -246,7 +246,21 @@ describe('tests', function() {
         assert.equal(res.body.error, 'Poll entries limit has exceeded the maximum size allowed')
       })
     })
-    it('Entry length exceeded', function() {
+    it ('Poll contains less than two entries', function() {
+      return chai.request(server)
+      .post('/api/newpoll')
+      .set('Cookie', `token=${authorization}`)
+      .send({
+        pollName: 'testPollName0',
+        user: 'mr.nolank@gmail.com',
+        entries: 'testEntry0;',
+      })
+      .then(res => {
+        assert.equal(res.status, 400);
+        assert.equal(res.body.error, 'Polls must contain at least two entries');
+      })
+    })
+    it('Length of a single entry exceeded', function() {
       return chai.request(server)
       .post('/api/newpoll')
       .set('Cookie', `token=${authorization}`)
@@ -291,7 +305,7 @@ describe('tests', function() {
       .send({
         pollName: 'testPollName0',
         user: 'mr.nolank@gmail.com',
-        entries: 'testEntry0;testEntry1;testEntry2',
+        entries: 'testEntry0;;testEntry1;testEntry2;;',
       })
       .then(res => {
         assert.equal(res.status, 200);

@@ -198,38 +198,41 @@ const MyPolls = () => {
           </div>
         ) : (
           <table id="myPollsTable">
-            {userPolls.map(item => (
-              <tr>
-                <td>
-                  <span className="myPollName">{item.Name}</span>{' '}
-                </td>
-                <td>
-                  <span className="editBtn">
-                    <button
-                      type="button"
-                      className="btnStyles"
-                      name={item.Name}
-                      id={item._id}
-                      onClick={e => editPollFunc(e)}
-                    >
-                      Edit
-                    </button>
-                  </span>
-                </td>
-                <td>
-                  <span className="deleteBtn">
-                    <button
-                      type="button"
-                      id={item._id}
-                      className="btnStyles"
-                      onClick={e => deletePollFunc(e)}
-                    >
-                      Delete
-                    </button>
-                  </span>
-                </td>
-              </tr>
-            ))}
+            <tbody>
+              {userPolls.map(item => (
+                <tr key={item._id}>
+                  <td>
+                    <span className="myPollName">{item.Name}</span>{' '}
+                  </td>
+                  <td>
+                    <span className="editBtn">
+                      <button
+                        type="button"
+                        className="btnStyles"
+                        name={item.Name}
+                        id={item._id}
+                        onClick={e => editPollFunc(e)}
+                      >
+                        Edit
+                      </button>
+                    </span>
+                  </td>
+                  <td>
+                    <span className="deleteBtn">
+                      <button
+                        data-testid={`tDelBtn-${item.Name}`}
+                        type="button"
+                        id={item._id}
+                        className="btnStyles"
+                        onClick={e => deletePollFunc(e)}
+                      >
+                        Delete
+                      </button>
+                    </span>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
           </table>
         )}
       </div>
@@ -243,29 +246,33 @@ const MyPolls = () => {
             </div>
             <h3>{`Edit '${editPollName}' Poll`}:</h3>
             <table id="editPollTable">
-              {editPoll.map(item => (
-                <tr>
-                  <td>
-                    <span className="editPollEntryList">{item}</span>
-                  </td>
-                  <td>
-                    <span className="delPollEntryBtn">
-                      <button
-                        type="button"
-                        id={item}
-                        className="btnStyles"
-                        onClick={e => delPollEntryFunc(e)}
-                      >
-                        X
-                      </button>
-                    </span>
-                  </td>
-                </tr>
-              ))}
+              <tbody>
+                {editPoll.map(item => (
+                  <tr key={item}>
+                    <td>
+                      <span className="editPollEntryList">{item}</span>
+                    </td>
+                    <td>
+                      <span className="delPollEntryBtn">
+                        <button
+                          type="button"
+                          data-testid={item}
+                          id={item}
+                          className="btnStyles"
+                          onClick={e => delPollEntryFunc(e)}
+                        >
+                          X
+                        </button>
+                      </span>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
             </table>
             <div id="addPollSection">
               <span id="addPollEntryInput">
                 <input
+                  data-testid="addEntryInput"
                   type="text"
                   className="txtInputs"
                   value={addPollInputVal}

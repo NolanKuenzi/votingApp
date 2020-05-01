@@ -8,15 +8,25 @@
     "build": "webpack --mode production",
     "test": "jest"
   },
+  "jest": {
+    "automock": false,
+    "setupFiles": [
+      "./src/js/setupJest.js"
+    ]
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.8.3",
+    "@babel/plugin-transform-modules-commonjs": "^7.9.0",
     "@babel/preset-env": "^7.8.3",
     "@babel/preset-react": "^7.8.3",
-    "@testing-library/react": "^9.4.1",
+    "@testing-library/jest-dom": "^5.5.0",
+    "@testing-library/react": "^9.5.0",
+    "@testing-library/react-hooks": "^3.2.1",
     "babel-eslint": "^9.0.0",
+    "babel-jest": "^25.4.0",
     "babel-loader": "^8.0.6",
     "css-loader": "^2.1.1",
     "eslint": "^5.16.0",
@@ -30,20 +40,18 @@
     "eslint-plugin-prettier": "^3.1.2",
     "eslint-plugin-react": "^7.18.0",
     "eslint-plugin-react-hooks": "^1.7.0",
-    "fetch-mock": "^9.0.0-beta.2",
     "html-loader": "^0.5.5",
     "html-webpack-plugin": "^3.2.0",
     "jest": "^24.9.0",
+    "jest-fetch-mock": "^3.0.3",
     "mini-css-extract-plugin": "^0.7.0",
-    "node-fetch": "^2.6.0",
     "optimize-css-assets-webpack-plugin": "^5.0.3",
     "prettier": "^1.19.1",
     "prop-types": "^15.7.2",
     "style-loader": "^0.23.1",
     "webpack": "^4.41.5",
     "webpack-cli": "^3.3.10",
-    "webpack-dev-server": "^3.10.1",
-    "whatwg-fetch": "^3.0.0"
+    "webpack-dev-server": "^3.10.1"
   },
   "dependencies": {
     "google-charts": "^2.0.0",

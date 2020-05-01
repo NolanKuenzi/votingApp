@@ -55,6 +55,7 @@ const Poll = () => {
   useEffect(() => {
     let iden = window.location.pathname;
     iden = iden.slice(7);
+    iden = 'TH3IxRfLexbTHvPAt3Z1zOCom';
 
     fetch(`https://young-dawn-72099.herokuapp.com/api/polls/${iden}`, {
       method: 'GET',
@@ -100,14 +101,12 @@ const Poll = () => {
           <span id="voteForSpan">I'd like to vote for...</span>
           <br />
           <select value={selectedItem} onChange={e => setSelectedItem(e.target.value)}>
-            <option value="" selected hidden>
-              Choose an option...
-            </option>
-            {pollDta.length === 0 ? (
-              <option value="" hidden></option>
-            ) : (
-              pollDta.map(item => <option value={item.name}>{item.name}</option>)
-            )}
+            <option value="">Choose an option...</option>
+            {pollDta.map(item => (
+              <option value={item.name} key={item.name}>
+                {item.name}
+              </option>
+            ))}
           </select>
           <br />
           <button id="pollVoteBtn" type="submit" className="btnStyles">

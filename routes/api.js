@@ -272,7 +272,12 @@ module.exports = function(app) {
         dta[0].map(item => {
           checkTables.push(item.Tables_in_heroku_62f465079584d76);
         })
-        const entries = req.body.entries.split(';');
+        let entries = req.body.entries.split(';');
+        entries = entries.filter(item => item !== '');
+        if (entries.length < 2) {
+          res.status(400).json({error: 'Polls must contain at least two entries'});
+          return;
+        }
         for (let i = 0; i < entries.length; i++) {
           if (entries[i].length > 50) {
             res.status(400).json({error: 'Entry limit of 50 characters has been exceeded'});
@@ -280,11 +285,7 @@ module.exports = function(app) {
           }
         }
         const modifyEntries = [];
-        entries.map(item => {
-          if (item !== '') {
-            modifyEntries.push({name: item, count: 0});
-          }
-        });
+        entries.map(item => modifyEntries.push({name: item, count: 0}));
         let findDuplicates = modifyEntries.map(item => item.name);
         findDuplicates = findDuplicates.filter((item, index, arr) => arr.indexOf(item) != index);
         if (findDuplicates.length !== 0) {
