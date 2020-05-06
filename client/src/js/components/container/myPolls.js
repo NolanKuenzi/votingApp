@@ -77,9 +77,8 @@ const MyPolls = () => {
 
   const deletePollFunc = e => {
     const Id = e.target.id;
-    if (editPoll.length === 0) {
+    if (editPoll.length !== 0) {
       cancelFunc();
-      return;
     }
     return new Promise(resolve => {
       resolve(checkLoginStatus());
@@ -144,7 +143,7 @@ const MyPolls = () => {
   };
 
   const addPollEntryFunc = () => {
-    if (addPollInputVal === '') {
+    if (/\S/.test(addPollInputVal) === false) {
       alert('Please fill out required input fields');
       return;
     }
