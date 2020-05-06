@@ -69,8 +69,18 @@ const MyPolls = () => {
       });
   };
 
+  const cancelFunc = () => {
+    setEditPoll([]);
+    setEditPollId('');
+    setEditPollName('');
+  };
+
   const deletePollFunc = e => {
     const Id = e.target.id;
+    if (editPoll.length === 0) {
+      cancelFunc();
+      return;
+    }
     return new Promise(resolve => {
       resolve(checkLoginStatus());
     })
@@ -96,12 +106,6 @@ const MyPolls = () => {
       .catch(err => {
         alert(err);
       });
-  };
-
-  const cancelFunc = () => {
-    setEditPoll([]);
-    setEditPollId('');
-    setEditPollName('');
   };
 
   const delPollEntryFunc = e => {
@@ -139,7 +143,11 @@ const MyPolls = () => {
       });
   };
 
-  const addPollEntryFunc = () =>
+  const addPollEntryFunc = () => {
+    if (addPollInputVal === '') {
+      alert('Please fill out required input fields');
+      return;
+    }
     new Promise(resolve => {
       resolve(checkLoginStatus());
     })
@@ -172,6 +180,7 @@ const MyPolls = () => {
       .catch(err => {
         alert(err);
       });
+  };
 
   useEffect(() => {
     fetch(`https://young-dawn-72099.herokuapp.com/api/userPolls/${usrEmail}`, {
