@@ -55,7 +55,6 @@ const Poll = () => {
   useEffect(() => {
     let iden = window.location.pathname;
     iden = iden.slice(7);
-    iden = 'TH3IxRfLexbTHvPAt3Z1zOCom';
 
     fetch(`https://young-dawn-72099.herokuapp.com/api/polls/${iden}`, {
       method: 'GET',
